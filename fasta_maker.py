@@ -7,12 +7,13 @@ import random
 import OS
 import string
 
-#function makes repeat seq of DNA nucleotides
+#function makes random seq of DNA nucleotides of specified  range
 nuc_list = ["A","T","G",C"]
 def repeat_seq(length):
     your_letters='ATCG'
     return ''.join((random.choice(your_letters) for i in range(length)))
 
+#specifying length of the 5 repeats
 repeat_seq1 = repeat_seq(30)
 repeat_seq2 = repeat_seq(30)
 repeat_seq3 = repeat_seq(30)
@@ -22,7 +23,7 @@ repeat_seq5 = repeat_seq(30)
 
 #function
 def new_fasta():
-#opens file  and is going to write what we tell it to - starts try block
+#opens file  and is going to write what we tell it to (the repeat sequences made) - starts try block 
 	try:
 		with open("pseudo_prote.fasta",w) as in_handle:
 			in_handle.write(repeat_seq1,repeat_seq2, repeat_seq3, repeat_seq4, repeat_seq5)
